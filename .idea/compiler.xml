@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="LAB8_IWEB1_BASE" />
+        <module name="LAB6_IWEB1_BASE" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="LAB8_IWEB1_BASE" target="1.8" />
+      <module name="LAB6_IWEB1_BASE" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

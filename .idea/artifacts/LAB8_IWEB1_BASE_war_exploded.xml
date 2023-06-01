@@ -11,7 +11,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="LAB8_IWEB1_BASE" />
+          <element id="module-output" name="LAB6_IWEB1_BASE" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.20" />
@@ -21,7 +21,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/LAB8_SW1_BASE-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="LAB8_IWEB1_BASE/web/Web" />
+      <element id="javaee-facet-resources" facet="LAB6_IWEB1_BASE/web/Web" />
     </root>
   </artifact>
 </component>
