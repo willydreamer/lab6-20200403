@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class TourDao {
 
     private static String user = "root";
-    private static String pass = "123456";
+    private static String pass = "root";
     private static String url = "jdbc:mysql://localhost:3306/lab6sw1?serverTimezone=America/Lima";
 
 
@@ -46,9 +46,7 @@ public class TourDao {
             e.printStackTrace();
         }
 
-        String sql = "SELECT c.idcancion, c.nombre_cancion, c.banda FROM cancion c left join reproduccion r on c.idcancion = r.cancion_idcancion\n" +
-                "group by c.idcancion having\n" +
-                "count(r.idreproduccion) > 2;\n";
+        String sql = "SELECT c.idcancion, c.nombre_cancion, c.banda FROM cancion c left join reproduccion r on c.idcancion = r.cancion_idcancion group by c.idcancion having count(r.idreproduccion) > 2 order by count(*) desc";
         try (Connection connection = DriverManager.getConnection(url, "root", pass);
              Statement stmt = connection.createStatement();
              ResultSet resultSet = stmt.executeQuery(sql)) {
@@ -60,15 +58,9 @@ public class TourDao {
                 cancion.setBanda(resultSet.getString(3));
                 lista.add(cancion);
             }
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
         return lista;
     }
-
-
-
-
 }

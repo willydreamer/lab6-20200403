@@ -2,30 +2,20 @@
 <%@ page import="Beans.Cancion" %>
 <%@ page import="Beans.Lista" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean type="java.util.ArrayList<Beans.Cancion>" scope="request" id="cancionesPorLista"/>
-<jsp:useBean type="Beans.Lista" scope="request" id="ListaActual"/>
-
+<jsp:useBean type="java.util.ArrayList<Beans.Cancion>" scope="request" id="listaCanciones"/>
 <html>
 <jsp:include page="/static/head.jsp">
-  <jsp:param name="title" value="listas"/>
+  <jsp:param name="title" value="Lista Canciones"/>
 </jsp:include>
 <body>
 <div class='container'>
   <jsp:include page="/includes/navbar.jsp">
-    <jsp:param name="page" value="listas"/>
+    <jsp:param name="page" value="canciones"/>
   </jsp:include>
   <div class="pb-5 pt-4 px-3 titlecolor">
     <div class="col-lg-6">
-      <h3 class='text-light'>Bienvenido a </h3><h2 style="color: chartreuse; font-family: 'Bauhaus 93'"><%=ListaActual.getNameLista()%></h2>
+      <h1 class='text-light'>Añade tus canciones Favoritas</h1>
     </div>
-    <div class="col-lg-6">
-      <h5 style="color: aquamarine" >Estas son las canciones que añadiste</h5>
-    </div>
-
-    <div class="text-center">
-        <a href="<%=request.getContextPath()%>/Listas" class="btn btn-outline-warning"><i class="bi bi-arrow-left"></i> Regresar</a>
-    </div>
-
   </div>
   <div class="tabla">
     <table class="table table-dark table-transparent table-hover">
@@ -36,7 +26,7 @@
       <th></th>
       </thead>
       <%
-        for (Cancion cancion : cancionesPorLista) {
+        for (Cancion cancion : listaCanciones) {
       %>
       <tr>
         <td><%=cancion.getIdCancion()%>
@@ -46,8 +36,8 @@
         <td><%=cancion.getBanda()%>
         </td>
         <td>
-          <a href="<%=request.getContextPath()%>/Listas?a=NoMeGusta&idCancion=<%=cancion.getIdCancion()%>&idLista=<%=ListaActual.getIdLista()%>">
-            <i class="bi bi-trash-fill" data-toggle="tooltip" data-placement="top" title="Eliminar de lista"></i>
+          <a href="<%=request.getContextPath()%>/listaRecomendados?a=meGusta&id=<%=cancion.getIdCancion()%>">
+            <i class="bi <%= (cancion.getLike() == 0) ? "bi-heart heart-icon" : "bi-heart-fill heart-icon-liked" %>" data-toggle="tooltip" data-placement="top" title="Añadir a lista de favoritos"></i>
           </a>
         </td>
       </tr>

@@ -8,6 +8,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/static/favicon2.ico" type="image/x-icon">
     <title><%=request.getParameter("title")%>
     </title>
@@ -55,7 +56,32 @@
             padding: 0.5rem;
             font-weight: 100;
         }
-
+        .heart-icon:hover {
+            color: green;
+            cursor: pointer;
+        }
+        .heart-icon{
+            color: white;
+        }
+        .heart-icon-liked:hover {
+            color: white;
+            cursor: pointer;
+        }
+        .heart-icon-liked{
+            color: green;
+        }
+        .bi-plus-circle{
+            color: white;
+        }
+        .bi-plus-circle:hover{
+            color: green;
+        }
+        .bi-trash-fill{
+            color: white;
+        }
+        .bi-trash-fill:hover{
+            color: green;
+        }
         .fila-red {
             background-color: #ba49498c;
         }

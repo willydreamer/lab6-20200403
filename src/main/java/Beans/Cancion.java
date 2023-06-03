@@ -4,6 +4,7 @@ public class Cancion {
     private int idCancion;
     private String nombreCancion;
     private String banda;
+    private int like;
 
     public int getIdCancion() {
         return idCancion;
@@ -27,5 +28,13 @@ public class Cancion {
 
     public void setBanda(String banda) {
         this.banda = banda;
+    }
+
+    public int getLike() {
+        return like;
+    }
+
+    public void setLike(int like) {
+        this.like = like;
     }
 }
